@@ -49,6 +49,22 @@ The final version will run thousands of random simulations to estimate:
 
 ## Version History
 
+### V1.1 — Hand Ranking Update
+This version introduces a more realistic hand evaluation system and improves simulation accuracy.
+
+New features include:
+
+- Added poker hand ranking detection
+- Added One Pair detection
+- Added Two Pair detection
+- Added Three of a Kind detection
+- Added Full House detection
+- Added Four of a Kind detection
+- Added pre-flop hand classification
+- Added hand strength advice system
+- Reduced unrealistic tie percentages
+- Improved code documentation and readability
+
 ### V1.0 — Initial Project Setup
 
 This early development version includes:
