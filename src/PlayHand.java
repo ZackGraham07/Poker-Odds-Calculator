@@ -1,10 +1,20 @@
 import java.io.*;
 import java.util.*;
 
+/**
+ * Poker Odds Calculator
+ *
+ * Allows a user to enter a starting hand and calculate
+ * approximate win, loss and tie percentages against a
+ * specified number of opponents using Monte Carlo simulation.
+ */
+
 public class PlayHand {
     public static void main(String[] args) throws IOException {
         System.out.println("Welcome to the Poker Odds Calculator!");
         Scanner scanner = new Scanner(System.in);
+
+        // Get the total number of players taking part in the hand
         System.out.print("Enter the number of players in the game: ");
         int numPlayers = scanner.nextInt();
         if (numPlayers < 2) {
@@ -12,6 +22,7 @@ public class PlayHand {
             return;
         }
 
+        // Create card objects from the user's input
         System.out.print("Enter the rank of the first card (2-14, 11=Jack, 12=Queen, 13=King, 14=Ace): ");
         int rank1 = scanner.nextInt();
         scanner.nextLine();
@@ -29,7 +40,11 @@ public class PlayHand {
         Hand playerHand = new Hand(card1, card2);
 
         System.out.println("Player's hand: " + playerHand);
-        System.out.println("Now calculating odds against " + (numPlayers - 1) + " opponent(s)...");
+        System.out.println("Hand Category: " + playerHand.handCategory());
+        System.out.println("Advice: " + playerHand.handAdvice());
+        System.out.println("Now calculating odds against " + (numPlayers - 1) + " opponent(s)...\n");
+
+        // Display pre-flop analysis and simulation results
         System.out.println("Winning odds: " + playerHand.calcWinOdds(numPlayers) + "%");
         System.out.println("Losing odds: " + playerHand.calculateLosingOdds(numPlayers) + "%");
         System.out.println("Tying odds: " + playerHand.calculateTyingOdds(numPlayers) + "%");

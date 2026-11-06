@@ -1,3 +1,8 @@
+/**
+ * Represents a standard playing card.
+ * Stores the card's rank and suit.
+ */
+
 public class Card {
     private int rank;
     private String suit;
@@ -13,6 +18,7 @@ public class Card {
     public void setRank(int rank) {this.rank = rank;}
     public void setSuit(String suit) {this.suit = suit;}
 
+    // Converts abbreviated ranks and suits into a readable format
     @Override
     public String toString() {
         String rankName;

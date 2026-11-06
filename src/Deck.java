@@ -1,8 +1,14 @@
 import java.util.*;
 
+/**
+ * Represents a standard 52-card deck.
+ * Supports card removal and random card drawing
+ */
+
 public class Deck {
     private List<Card> cards;
 
+    // Generate all 52 cards in the deck
     public Deck() {
         cards = new ArrayList<>();
         String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
@@ -13,6 +19,7 @@ public class Deck {
         }
     }
 
+    // Remove a known card so it cannot appear again
     public void removeCard(Card c) {
         for (int i = 0; i < cards.size(); i++) {
             Card card = cards.get(i);
@@ -23,6 +30,7 @@ public class Deck {
         }
     }
 
+    // Draw a random card from the deck and remove it
     public Card drawRandomCard(Random rand) {
         int index = rand.nextInt(cards.size());
         return cards.remove(index);
